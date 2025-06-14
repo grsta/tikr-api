@@ -33,12 +33,14 @@ def get_ticker():
     available_categories = [cat for cat in headlines if headlines[cat]]
     selected_cat = random.choice(available_categories)
     selected_item = random.choice(headlines[selected_cat])
-    
-       return jsonify([{
-    "category": selected_cat,
-    "headline": selected_item["headline"],
-    "link": selected_item["link"]
-}])
+
+    return jsonify([
+        {
+            "category": selected_cat,
+            "headline": selected_item["headline"],
+            "link": selected_item["link"]
+        }
+    ])
 
 
 if __name__ == "__main__":
