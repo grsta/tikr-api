@@ -34,11 +34,11 @@ def get_ticker():
     selected_cat = random.choice(available_categories)
     selected_item = random.choice(headlines[selected_cat])
     
-    return jsonify({
+       return jsonify([{
         "category": selected_cat,
         "headline": selected_item["headline"],
         "link": selected_item["link"]
-    })
+    }])
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
