@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 import random
+import requests
+
 
 app = Flask(__name__)
 
@@ -41,6 +43,31 @@ def get_ticker():
             "link": selected_item["link"]
         }
     ])
+
+
+@app.route("/weather/lafayette", methods=["GET"])
+def get_weather():
+    try:
+        api_key = "eaecd5092b8080adcee4946894343355"  # ← replace this with your actual OpenWeatherMap key
+        lat = 30.1843
+        lon = -92.0497
+
+        url = (
+            f"https://api.openweathermap.org/data/2.5/weather?"
+            f"lat={lat}&lon={lon}&appid={api_key}&units=imperial"
+        )
+        response = requests.get(url)
+        data = response.json()
+
+        return jsonify({
+            "city": data["name"],
+            "temp": data["main"]["temp"],
+            "feels_like": data["main"]["feels_like"],
+            "condition": data["weather"][0]["main"],
+            "icon": data["weather"][0]["icon"]
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
