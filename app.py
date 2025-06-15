@@ -59,13 +59,13 @@ def get_weather():
         response = requests.get(url)
         data = response.json()
 
-        return jsonify({
+        return jsonify([{
             "city": data["name"],
             "temp": data["main"]["temp"],
             "feels_like": data["main"]["feels_like"],
             "condition": data["weather"][0]["main"],
             "icon": data["weather"][0]["icon"]
-        })
+        }])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
