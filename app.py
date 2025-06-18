@@ -69,8 +69,7 @@ def get_weather():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 # --- Recorder endpoint ------------------------------------------
-from flask import jsonify
-import json
+
 
 @app.route("/recorders", methods=["GET"])
 def get_recorders():
