@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "user_id": 101,
+    "title": "Favorite NVR Setup",
+    "type": "saved_product",
+    "details": "ALI-NVR5416P with 4TB HDD + 4 IP cameras",
+    "date_saved": "2025-06-18"
+  },
+  {
+    "id": 2,
+    "user_id": 101,
+    "title": "Wiring Tip from Field",
+    "type": "note",
+    "details": "Always leave 2ft of slack at camera drops",
+    "date_saved": "2025-06-15"
+  },
+  {
+    "id": 3,
+    "user_id": 101,
+    "title": "Job Site Address",
+    "type": "location",
+    "details": "1234 Security Ln, Houston TX",
+    "date_saved": "2025-06-14"
+  }
+]
