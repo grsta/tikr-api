@@ -92,6 +92,7 @@ def get_locker():
         with open("knowledge.json") as f:
             data = json.load(f)
         return jsonify(data)
+        
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
