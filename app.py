@@ -87,14 +87,14 @@ def get_locker():
         return jsonify(data)
         
  @app.route("/knowledge", methods=["GET"])
-def get_knowledge():
+ def get_knowledge():
     try:
         with open("knowledge.json") as f:
             data = json.load(f)
         return jsonify(data)
-       
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == "__main__":
