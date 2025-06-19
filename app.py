@@ -57,10 +57,10 @@ def get_locker():
 
 
 # ---------- Knowledge endpoint ----------
-@app.route("/knowledge", methods=["GET"])
-def get_knowledge():
+@app.route("/Knowledge", methods=["GET"])
+def get_Knowledge():
     try:
-        with open("knowledge.json") as f:
+        with open("Knowledge.json") as f:
             return jsonify(json.load(f))
     except Exception as e:
         return jsonify({"error": str(e)}), 500
